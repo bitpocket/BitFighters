@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using WebApplication3.Models;
-using WebApplication3.Models.ManageViewModels;
-using WebApplication3.Services;
+using BitFighters.Web.Models;
+using BitFighters.Web.Models.ManageViewModels;
+using BitFighters.Web.Services;
 
-namespace WebApplication3.Controllers
+namespace BitFighters.Web.Controllers
 {
     [Authorize]
     public class ManageController : Controller

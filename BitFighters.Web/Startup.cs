@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using WebApplication3.Data;
-using WebApplication3.Models;
-using WebApplication3.Services;
+using BitFighters.Web.Data;
+using BitFighters.Web.Models;
+using BitFighters.Web.Services;
 
-namespace WebApplication3
+namespace BitFighters.Web
 {
     public class Startup
     {

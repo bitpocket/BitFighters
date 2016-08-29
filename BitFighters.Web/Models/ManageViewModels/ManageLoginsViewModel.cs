@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http.Authentication;
 using Microsoft.AspNetCore.Identity;
 
-namespace WebApplication3.Models.ManageViewModels
+namespace BitFighters.Web.Models.ManageViewModels
 {
     public class ManageLoginsViewModel
     {

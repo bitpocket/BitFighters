@@ -8,11 +8,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
-using WebApplication3.Models;
-using WebApplication3.Models.AccountViewModels;
-using WebApplication3.Services;
+using BitFighters.Web.Models;
+using BitFighters.Web.Models.AccountViewModels;
+using BitFighters.Web.Services;
 
-namespace WebApplication3.Controllers
+namespace BitFighters.Web.Controllers
 {
     [Authorize]
     public class AccountController : Controller

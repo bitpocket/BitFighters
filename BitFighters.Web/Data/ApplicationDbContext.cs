@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using WebApplication3.Models;
+using BitFighters.Web.Models;
 
-namespace WebApplication3.Data
+namespace BitFighters.Web.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

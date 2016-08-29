@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace WebApplication3.Data.Migrations
+namespace BitFighters.Web.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {
