@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace BitFighters.Web.Controllers
 {
@@ -13,16 +9,37 @@ namespace BitFighters.Web.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult Games()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "This is games.";
 
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult JoinGame()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Select game to join.";
+
+            return View();
+        }
+
+        public IActionResult CreateGame()
+        {
+            ViewData["Message"] = "Create new game.";
+
+            return View();
+        }
+
+        public IActionResult MyGames()
+        {
+            ViewData["Message"] = "My games.";
+
+            return View();
+        }
+
+        public IActionResult About()
+        {
+            ViewData["Message"] = "Your application description page.";
 
             return View();
         }
