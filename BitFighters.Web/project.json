@@ -1,11 +1,7 @@
-﻿{
-  "userSecretsId": "aspnet-BitFighters.Web-78912317-2449-4ec1-82d9-7b7a8db192b2",
+{
+  "userSecretsId": "aspnet-BitFighters.Web-52f3623f-a40e-4e94-a923-0f6c150cba23",
 
   "dependencies": {
-    "Microsoft.NETCore.App": {
-      "version": "1.0.0",
-      "type": "platform"
-    },
     "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.0.0",
@@ -42,8 +38,8 @@
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview2-final",
       "type": "build"
-    }
-  },
+    },
+    "SimpleInjector.Integration.AspNetCore.Mvc": "3.2.3"  },
 
   "tools": {
     "BundlerMinifier.Core": "2.0.238",
@@ -60,23 +56,18 @@
   },
 
   "frameworks": {
-    "netcoreapp1.0": {
-      "imports": [
-        "dotnet5.6",
-        "portable-net45+win8"
-      ]
+    "net461": {
+      "dependencies": {
+        "BitFighters.Game": {
+          "target": "project"
+        }
+      }
     }
   },
 
   "buildOptions": {
     "emitEntryPoint": true,
     "preserveCompilationContext": true
-  },
-
-  "runtimeOptions": {
-    "configProperties": {
-      "System.GC.Server": true
-    }
   },
 
   "publishOptions": {

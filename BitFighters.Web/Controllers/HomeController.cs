@@ -1,9 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using BitFighters.Web.Services;
 
 namespace BitFighters.Web.Controllers
 {
     public class HomeController : Controller
     {
+        readonly IGameTypeService _gameTypeService;
+
+        public HomeController(IGameTypeService gameTypeService)
+        {
+            _gameTypeService = gameTypeService;
+        }
+
         public IActionResult Index()
         {
             return View();

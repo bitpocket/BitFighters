@@ -12,11 +12,19 @@ using Microsoft.Extensions.Logging;
 using BitFighters.Web.Data;
 using BitFighters.Web.Models;
 using BitFighters.Web.Services;
+using Microsoft.AspNetCore.Mvc.Controllers;
+
+using SimpleInjector;
+using SimpleInjector.Integration.AspNetCore;
+using SimpleInjector.Integration.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewComponents;
 
 namespace BitFighters.Web
 {
     public class Startup
     {
+        private Container container = new Container();
+
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -52,11 +60,21 @@ namespace BitFighters.Web
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+
+            services.AddSingleton<IControllerActivator>(
+              new SimpleInjectorControllerActivator(container));
+            services.AddSingleton<IViewComponentActivator>(
+                new SimpleInjectorViewComponentActivator(container));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseSimpleInjectorAspNetRequestScoping(container);
+            container.Options.DefaultScopedLifestyle = new AspNetRequestLifestyle();
+            InitializeContainer(app);
+            //container.Verify();
+
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
@@ -83,6 +101,21 @@ namespace BitFighters.Web
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+
+        private void InitializeContainer(IApplicationBuilder app)
+        {
+            // Add application presentation components:
+            container.RegisterMvcControllers(app);
+            container.RegisterMvcViewComponents(app);
+
+            // Add application services. For instance:
+            container.Register<IGameTypeService, GameTypeService>(Lifestyle.Scoped);
+
+            // Cross-wire ASP.NET services (if any). For instance:
+            container.RegisterSingleton(app.ApplicationServices.GetService<ILoggerFactory>());
+            // NOTE: Prevent cross-wired instances as much as possible.
+            // See: https://simpleinjector.org/blog/2016/07/
         }
     }
 }

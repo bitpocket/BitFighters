@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "exports": {
+    "BitFighters.Game/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6",
+      "compile": {
+        "bin/Debug/BitFighters.Game.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/BitFighters.Game.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/BitFighters.Game.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}
