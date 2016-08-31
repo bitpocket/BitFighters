@@ -1,0 +1,44 @@
+﻿@using Game;
+@model BitFighters.Web.Models.CreateGameViewModel
+
+@{
+    ViewData["Title"] = "Games";
+    IEnumerable<IGameHeader> gameHeaders = ViewBag.GameHeaders;
+}
+<h2>@ViewData["Title"].</h2>
+<h3>@ViewData["Message"]</h3>
+
+<div class="container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <table class="table table-bordered table-striped ">
+
+        <thead>
+            <tr>
+                <th width="100%">Name</th>
+                <th width="100%">Description</th>
+                <th width="100%">Min Players</th>
+                <th width="100%">Max Player</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @if (null != gameHeaders)
+            {
+                foreach (var gameHeader in gameHeaders)
+                {
+                    <tr>
+                        <td>@gameHeader.Name</td>
+                        <td>@gameHeader.Description</td>
+                        <td>@gameHeader.MinPlayer</td>
+                        <td>@gameHeader.MaxPlayer</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

@@ -43,6 +43,7 @@
     <Compile Include="GameType.cs" />
     <Compile Include="IGame.cs" />
     <Compile Include="IGameData.cs" />
+    <Compile Include="GameHeader.cs" />
     <Compile Include="IGameHeader.cs" />
     <Compile Include="IGameResult.cs" />
     <Compile Include="IGameState.cs" />

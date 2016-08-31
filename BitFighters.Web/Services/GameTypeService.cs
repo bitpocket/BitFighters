@@ -7,16 +7,13 @@ namespace BitFighters.Web.Services
 {
     public class GameTypeService : IGameTypeService
     {
-        public IEnumerable<string> GetGameTypes()
+        public IEnumerable<IGameHeader> GetGameTypes()
         {
-            var type = typeof(IGame);
-            var types = AppDomain.CurrentDomain.GetAssemblies()
-                .SelectMany(s => s.GetTypes())
-                .Where(p => type.IsAssignableFrom(p))
-                .Select(c => c.Name)
-                .ToList();
-
-            return types;
+            return new List<IGameHeader>()
+            {
+                new GameHeader() {Name="Knots and cresses", Description = "Sipmly game", MinPlayer =2, MaxPlayer=2 },
+                new GameHeader() {Name="Go", Description = "No such sipmly game", MinPlayer =2, MaxPlayer=2 }
+            };
         }
     }
 }

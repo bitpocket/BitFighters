@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using BitFighters.Web.Services;
+using BitFighters.Web.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BitFighters.Web.Controllers
 {
@@ -32,6 +34,15 @@ namespace BitFighters.Web.Controllers
         }
 
         public IActionResult CreateGame()
+        {
+            ViewData["Message"] = "Create new game.";
+            ViewBag.GameHeaders = _gameTypeService.GetGameTypes();
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateGame(CreateGameViewModel createGameViewModel)
         {
             ViewData["Message"] = "Create new game.";
 

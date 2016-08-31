@@ -17,6 +17,23 @@
           "copyToOutput": true
         }
       }
+    },
+    "KnotsAndCrosses/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6",
+      "compile": {
+        "bin/Debug/KnotsAndCrosses.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/KnotsAndCrosses.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/KnotsAndCrosses.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
     }
   }
 }
